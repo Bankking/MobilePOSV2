@@ -19,8 +19,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,10 +58,10 @@ public class InventoryAddMoreItemActivity extends Activity {
 	private Button confirmButton;
 	/** button to cancel product */
 	private Button cancelButton;
-	/** button to check duplicate product */
-	private Button checkButton;
+//	/** button to check duplicate product */
+//	private Button checkButton;
 	/** button to scan product by using barcode scanner */
-	private Button scanBtn;
+	private ImageButton scanBtn;
 	
 	private CartController newItem;
 	/** create inventory */
@@ -122,6 +125,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 				MainActivity.class);
 
 				startActivity(goInventory);
+				
 			}
 		});
 		
@@ -234,7 +238,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 		confirmButton = (Button) findViewById(R.id.inventory_add_confirm);
 		cancelButton = (Button) findViewById(R.id.inventory_add_cancel);
 		//checkButton = (Button) findViewById(R.id.inventory_amp_b_check);
-		scanBtn = (Button)findViewById(R.id.inventory_add_scan);      
+		scanBtn = (ImageButton)findViewById(R.id.inventory_add_scan);      
 		
 	}
 

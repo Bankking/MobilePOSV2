@@ -32,7 +32,7 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp" />
+            android:paddingLeft="26dp" />
 
         <EditText
             android:id="@+id/inventory_add_productid"
@@ -53,7 +53,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="150dp" />
+            android:paddingLeft="146dp" />
 
         <ImageButton
             android:id="@+id/inventory_add_scan"
@@ -78,7 +78,7 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="7dp" />
+            android:paddingLeft="6dp" />
 
         <EditText
             android:id="@+id/inventory_add_productname"
@@ -102,7 +102,7 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="6dp" />
+            android:paddingLeft="5dp" />
 
         <EditText
             android:id="@+id/inventory_add_productbrand"
@@ -128,13 +128,14 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="42dp" />
+            android:paddingLeft="41dp" />
 
         <EditText
             android:id="@+id/inventory_add_quantity"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
-            android:ems="10" />
+            android:ems="10"
+            android:inputType="number" />
 
     </LinearLayout>
 
@@ -153,14 +154,14 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="24dp" />
+            android:paddingLeft="22dp" />
 
         <EditText
             android:id="@+id/inventory_add_price"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
     </LinearLayout>
 
@@ -179,14 +180,14 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="39dp" />
+            android:paddingLeft="37dp" />
 
         <EditText
             android:id="@+id/inventory_add_sellprice"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="number" />
 
     </LinearLayout>
 
@@ -223,5 +224,6 @@
             android:layout_height="wrap_content"
             android:paddingRight="20dp" />
 
-    </LinearLayout>    
+    </LinearLayout>
+    
 </LinearLayout>
