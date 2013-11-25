@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
 	private Button scanBtn;
   	private TextView formatTxt, contentTxt;
   	private int itemPosition;
+  	
 	
 	@Override
 	public void onCreate(Bundle saveInstanceState){
@@ -209,7 +210,7 @@ public class MainActivity extends Activity {
         final AlertDialog.Builder saleAddDialog = new AlertDialog.Builder(this);
         final EditText saleId = new EditText(this);
 
-        saleAddDialog.setTitle("Input product ID");
+        saleAddDialog.setMessage("Input product ID");
         saleAddDialog.setView(saleId);
     	// Add
         saleAddDialog.setPositiveButton("Add", new DialogInterface.OnClickListener() {
@@ -233,7 +234,6 @@ public class MainActivity extends Activity {
     	
 	}
 	
-
 	//Menu Activity
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

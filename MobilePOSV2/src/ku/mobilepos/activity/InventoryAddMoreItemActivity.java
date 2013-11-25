@@ -28,47 +28,31 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class InventoryAddMoreItemActivity extends Activity {
-	/** name of product */
+	
 	private EditText itemName;
-	/** type of product quantity */ 
 	private EditText itemQntyType;
-	/** brand of product */
 	private EditText itemBrand;
-	/** cost of product */
 	private EditText itemPrice;
-	/** cost of one product per box */
-	//private EditText itemPiecePerBox;
-	/** id of product */
 	private EditText itemProductId;
-	/** cost of product per box */
 	private EditText itemBuyPricePerBox;
 	
-	/** text view of product */
 	private TextView itemBuyPriceCal;
-	/** text view to enter cost of product */
 	private TextView itemBuyPriceText;
-	/** text view of type of product */
 	private TextView itemBuyType;
-	/** text view of cost of product by bath */
 	private TextView itemBuyBahtPerType;
 	private TextView formatTxt;
 	private TextView contentTxt;
 	
-	/** button to confirm for add product */
 	private Button confirmButton;
-	/** button to cancel product */
 	private Button cancelButton;
-//	/** button to check duplicate product */
-//	private Button checkButton;
-	/** button to scan product by using barcode scanner */
 	private ImageButton scanBtn;
 	
 	private CartController newItem;
-	/** create inventory */
 	private Inventory inventory;
 	
-	/** cost per piece */
 	private String pricePerPiece;
+	
+	private TabHost myTabHost;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +107,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 				// TODO Auto-generated method stub
 				Intent goInventory = new Intent(getApplicationContext(),
 				MainActivity.class);
-
+				
 				startActivity(goInventory);
 				
 			}
@@ -155,8 +139,12 @@ public class InventoryAddMoreItemActivity extends Activity {
 					newItem.setItemBuyPiece(itemQntyType.getText().toString());
 					newItem.setItemPrice(itemPrice.getText().toString());
 					newItem.setItemBuyPriceBahtPerBox(itemBuyPricePerBox.getText().toString());
-					inventory.addItem(newItem);				
+					inventory.addItem(newItem);		
+					
+					Intent goInventory = new Intent(getApplicationContext(),MainActivity.class);
+					startActivity(goInventory);
 				}
+				
 			}
 		});
 

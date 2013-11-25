@@ -108,8 +108,7 @@
             android:id="@+id/inventory_add_productbrand"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberSigned" />
+            android:ems="10" />
 
     </LinearLayout>
 
