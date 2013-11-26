@@ -116,11 +116,11 @@ public class SaleSelectItemActivity extends Activity {
     		//check the item on inventory and add to cart
     		@Override
     		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    			
-    			cart.addToCart(inventory.getItemByPostion(itemPosition));
+    				
     			int updateQuantity = inventory.getItemList().get(itemPosition).getItemQnty() - 1;
     			if(updateQuantity >= 0)
     			{
+    				cart.addToCart(inventory.getItemByPostion(itemPosition));
     				inventory.getItemList().get(itemPosition).setItemQnty(Integer.toString(updateQuantity));
     				// Show Alert 
     				Toast.makeText(getApplicationContext(), "Add "+ inventory.getItemList().get(itemPosition).getItemName() +" to Sale list\n" + updateQuantity, Toast.LENGTH_LONG)
