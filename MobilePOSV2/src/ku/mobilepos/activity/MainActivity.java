@@ -28,6 +28,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends Activity {
 
+	/**sale page*/
 	private ImageButton addToCartButton;
 	private ImageButton clearButton;
 	private Button confirmButton;
@@ -37,13 +38,16 @@ public class MainActivity extends Activity {
 	private Cart cart;
 	private Inventory inventory;
 	private String[] itemInCartListStringArr;
+	private Button scanBtn;
 	
+	/**inventory page*/
 	private ImageButton addButton;
+	
 	/** list of product */
 	private ListView allItemList;
 	private String[] inventoryString;
 	private String[] inventoryListStringArr;
-	private Button scanBtn;
+	
   	private TextView formatTxt, contentTxt;
   	private int itemPosition;
   	

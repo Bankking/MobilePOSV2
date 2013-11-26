@@ -390,7 +390,7 @@
                             android:paddingLeft="310dp" />
 
                         <ImageButton
-                            android:id="@+id/customer_delete
+                            android:id="@+id/customer_delete"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@android:drawable/ic_menu_delete" />
