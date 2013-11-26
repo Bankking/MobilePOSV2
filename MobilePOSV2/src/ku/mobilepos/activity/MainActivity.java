@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 		addToCartButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				/*// TODO Auto-generated method stub
+
 				if (inventory.isEmpty()) {
 					Toast.makeText(
 							getApplicationContext(),
@@ -104,8 +104,8 @@ public class MainActivity extends Activity {
 							getApplicationContext(),
 							SaleSelectItemActivity.class);
 					startActivity(goSaleSelectItem);
-				}*/
-				showSaleAddDialog();
+				}
+				//showSaleAddDialog();
 			}
 		});
 		
@@ -116,13 +116,13 @@ public class MainActivity extends Activity {
 				cart.resetCart();
 				Intent refreshCart = new Intent(getApplicationContext(),MainActivity.class);
     			startActivity(refreshCart);
+				*/
+				cart.resetCart();
+				itemInCartList.refreshDrawableState();
 				Toast.makeText(
 						getApplicationContext(),
 						"Sale List is reset.",
 						Toast.LENGTH_SHORT).show();
-				*/
-				cart.resetCart();
-				itemInCartList.refreshDrawableState();
 			}
 		});
 		

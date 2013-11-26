@@ -25,12 +25,11 @@ public final class R {
         public static final int untitled=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08002a;
-        public static final int imageButton3=0x7f080027;
-        public static final int imageButton4=0x7f080024;
+        public static final int action_settings=0x7f08002d;
+        public static final int imageButton3=0x7f080028;
         public static final int imageButton6=0x7f08001d;
         public static final int imageButton7=0x7f08001e;
-        public static final int inventory_add=0x7f080026;
+        public static final int inventory_add=0x7f080027;
         public static final int inventory_add_cancel=0x7f080017;
         public static final int inventory_add_confirm=0x7f080015;
         public static final int inventory_add_price=0x7f080011;
@@ -40,17 +39,21 @@ public final class R {
         public static final int inventory_add_quantity=0x7f08000e;
         public static final int inventory_add_scan=0x7f080005;
         public static final int inventory_add_sellprice=0x7f080014;
-        public static final int inventory_itemlist=0x7f080025;
+        public static final int inventory_itemlist=0x7f080026;
         public static final int linearLayout1=0x7f08001a;
         public static final int sale_add=0x7f08001c;
+        public static final int sale_add_cancel=0x7f08002c;
+        public static final int sale_add_itemlist=0x7f08002b;
+        public static final int sale_add_search=0x7f080025;
+        public static final int sale_add_search_edit=0x7f080024;
         public static final int sale_clear=0x7f08001f;
         public static final int sale_confirm=0x7f080021;
         public static final int sale_itemlist=0x7f080020;
         public static final int sale_tatalprice=0x7f080022;
         public static final int tab1=0x7f08001b;
         public static final int tab2=0x7f080023;
-        public static final int tab3=0x7f080028;
-        public static final int tab4=0x7f080029;
+        public static final int tab3=0x7f080029;
+        public static final int tab4=0x7f08002a;
         public static final int tabhost=0x7f080019;
         public static final int textView1=0x7f080000;
         public static final int textView10=0x7f08000a;
@@ -72,6 +75,7 @@ public final class R {
     public static final class layout {
         public static final int inventory_add_page=0x7f030000;
         public static final int main=0x7f030001;
+        public static final int sale_add_page=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;
