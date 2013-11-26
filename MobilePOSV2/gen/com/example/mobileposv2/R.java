@@ -33,6 +33,7 @@ public final class R {
         public static final int customer_add_phone=0x7f080006;
         public static final int customer_delete=0x7f080035;
         public static final int customer_edit=0x7f080031;
+        public static final int customer_itemlist=0x7f080034;
         public static final int customer_search=0x7f080033;
         public static final int customer_search_edit=0x7f080032;
         public static final int inventory_add=0x7f080028;
@@ -51,7 +52,6 @@ public final class R {
         public static final int inventory_search=0x7f08002b;
         public static final int inventory_search_edit=0x7f08002a;
         public static final int linearLayout1=0x7f08001e;
-        public static final int listView1=0x7f080034;
         public static final int sale_add=0x7f080020;
         public static final int sale_add_cancel=0x7f080039;
         public static final int sale_add_itemlist=0x7f080038;

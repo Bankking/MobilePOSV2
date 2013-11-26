@@ -2,6 +2,8 @@ package ku.mobilepos.activity;
 
 import ku.mobilepos.controller.InventoryController;
 import ku.mobilepos.domain.Cart;
+import ku.mobilepos.domain.Customer;
+import ku.mobilepos.domain.CustomerList;
 import ku.mobilepos.domain.Inventory;
 
 import com.example.mobileposv2.R;
@@ -57,7 +59,15 @@ public class MainActivity extends Activity {
 	private String[] inventoryListStringArr;
 	
   	/**customer page*/
-  	
+	private ImageButton cusAddBt;
+	private ImageButton cusEditBt;
+	private ImageButton cusSearchBt;
+	private ImageButton cusDeleteBt;
+	
+	/** list of customer */
+	private ListView allCustomerList;
+	private Customer customerList;
+	private String[] customerListStringArr;
 	
 	
 	@Override
@@ -151,8 +161,45 @@ public class MainActivity extends Activity {
         		
         	}
         });
+        
+        customerList = CustomerList.getInstance();
+        createItemCusListStringArr();
+        cusAddBt = (ImageButton)findViewById(R.id.customer_add);
+        cusAddBt.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+        	
+        		Intent goAddNewCus = new Intent(getApplicationContext(),CustomerAddNewCustomerActivity.class);
+    			startActivity(goAddNewCus);
+        	}
+        });
 		
 	}
+	
+	public void createItemCusListStringArr(){
+    	if (customerList.getCustomerList().size()!=0){
+        	customerListStringArr = new String[customerList.getCustomerList().size()];
+        	for (int i = 0; i < customerListStringArr.length; i++) {
+    			customerListStringArr[i] =  "\nName: "+customerList.getCustomerList().get(i).getCusName().toString() +"\nPhone No.: "
+    										+customerList.getCustomerList().get(i).getCusPhoneNo();
+    		}
+        	
+        	allCustomerList = (ListView)findViewById(R.id.customer_itemlist);
+        	ArrayAdapter<String> itemListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, customerListStringArr);
+    		allCustomerList.setAdapter(itemListAdapter); 
+    		allCustomerList.setOnItemClickListener(new OnItemClickListener() {
+
+    		@Override
+    		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    						           
+    		        // Show Alert 
+    		        Toast.makeText(getApplicationContext(),
+    		        "Click" , Toast.LENGTH_LONG)
+    		        .show();
+    			}
+    		});
+        }
+    }
 	
 	public void createItemSaleListStringArr() {
 		if (cart.getItemListInCart().size() != 0) {
