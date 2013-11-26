@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 		tabSpec.setIndicator("Customer");
 		tabHost.addTab(tabSpec);
 			
-		tabHost.setCurrentTab(0);
+		tabHost.setCurrentTab(1);
 		inventory = InventoryController.getInstance();
 		cart = Cart.getCartInstance();
 		
