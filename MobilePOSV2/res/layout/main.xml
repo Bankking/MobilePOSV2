@@ -376,7 +376,9 @@
                         android:id="@+id/customer_itemlist"
                         android:layout_width="match_parent"
                         android:layout_height="124dp"
-                        android:layout_weight="0.47" >
+                        android:layout_weight="0.47"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp" >
                     </ListView>
 
                     <LinearLayout
