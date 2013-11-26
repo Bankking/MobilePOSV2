@@ -53,6 +53,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 	private String pricePerPiece;
 	
 	private TabHost myTabHost;
+	private Button buttonScan;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -172,6 +173,11 @@ public class InventoryAddMoreItemActivity extends Activity {
 //				}
 //			}
 //		});
+		
+		buttonScan = (Button) findViewById(R.id.inventory_add_scan);
+		//OnClickListener scanListener = new ScanProduct(this);
+		//buttonScan.setOnClickListener(scanListener);
+		
 	}
 	
 	
