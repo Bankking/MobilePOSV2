@@ -63,8 +63,8 @@ public class MainActivity extends Activity {
 		addButton = (ImageButton)findViewById(R.id.inventory_add);
 	
 		tabHost.setup();
-		TabHost.TabSpec tabSpec = tabHost.newTabSpec("tab1");
 		
+		TabHost.TabSpec tabSpec = tabHost.newTabSpec("tab1");
 		tabSpec.setContent(R.id.tab1);
 		tabSpec.setIndicator("Sale");
 		tabHost.addTab(tabSpec);
@@ -84,6 +84,7 @@ public class MainActivity extends Activity {
 		tabSpec.setIndicator("Customer");
 		tabHost.addTab(tabSpec);
 			
+		tabHost.setCurrentTab(0);
 		inventory = InventoryController.getInstance();
 		cart = Cart.getCartInstance();
 		

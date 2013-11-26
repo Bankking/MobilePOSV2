@@ -174,7 +174,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 //			}
 //		});
 		
-		buttonScan = (Button) findViewById(R.id.inventory_add_scan);
+		//buttonScan = (Button) findViewById(R.id.inventory_add_scan);
 		//OnClickListener scanListener = new ScanProduct(this);
 		//buttonScan.setOnClickListener(scanListener);
 		
