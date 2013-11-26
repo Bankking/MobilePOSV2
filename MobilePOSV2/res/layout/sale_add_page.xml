@@ -28,7 +28,7 @@
 
         <EditText
             android:id="@+id/sale_add_search_edit"
-            android:layout_width="280dp"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="search product id" 
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/untitled"
-            android:text="  Cancel  "
+            android:text="  Done  "
             android:textSize="14sp" />
 
         <TextView
