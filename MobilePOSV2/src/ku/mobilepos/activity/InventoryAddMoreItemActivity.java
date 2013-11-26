@@ -48,7 +48,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 	private ImageButton scanBtn;
 	
 	private CartController newItem;
-	private Inventory inventory;
+	private InventoryController inventory;
 	
 	private String pricePerPiece;
 	
@@ -59,7 +59,7 @@ public class InventoryAddMoreItemActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.inventory_add_page);
-		inventory = InventoryController.getInstance();
+		inventory = Inventory.getInstance();
 		//itemList = inventory.getItemList();
 		newItem = new CartController();
 		createAllFindViewById();

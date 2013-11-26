@@ -1,16 +1,27 @@
 package ku.mobilepos.domain;
 
-import java.util.List;
-
-import ku.mobilepos.controller.CustomerController;
-
-public interface Customer {
-	public void addCustomer(CustomerController c);
-	public void removeCustomer(String cusId);
-	public CustomerController getCustomerByName(String cusName);
-	public CustomerController getCustomerById(String cusId);
-	public CustomerController getCustomerByPhoneNo(String cusPhoneNo);
-	public List<CustomerController> getCustomerList();
-	public boolean isEmpty();
+public class Customer {
+	private String cusId;
+	private String cusName;
+	private String cusPhoneNo;
+	
+	public void setCusId(int i){
+		this.cusId = ""+i;
+	}
+	public void setCusName(String cusName){
+		this.cusName = cusName;
+	}
+	public void setCusPhoneNo(String cusPhoneNo){
+		this.cusPhoneNo = cusPhoneNo;
+	}
+	public String getCusId(){
+		return cusId;
+	}
+	public String getCusName(){
+		return cusName;
+	}
+	public String getCusPhoneNo(){
+		return cusPhoneNo;
+	}
 
 }

@@ -3,28 +3,28 @@ package ku.mobilepos.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import ku.mobilepos.controller.CustomerController;
+import ku.mobilepos.controller.CustomerListController;
 
 
-public class CustomerList implements Customer{
+public class CustomerList implements CustomerListController{
 	
-	private static Customer customerList = null;
-	private static List<CustomerController> cusList = null;
+	private static CustomerListController customerList = null;
+	private static List<Customer> cusList = null;
 	
 	private CustomerList(){
 		
 	}
 	
-	public static Customer getInstance(){
+	public static CustomerListController getInstance(){
 		if (customerList == null) {
 			customerList = new CustomerList();
-			cusList = new ArrayList<CustomerController>();
+			cusList = new ArrayList<Customer>();
 		}
 		return customerList;
 	}
 	
 	@Override
-	public void addCustomer(CustomerController c) {
+	public void addCustomer(Customer c) {
 		// TODO Auto-generated method stub
 		cusList.add(c);
 	}
@@ -42,7 +42,7 @@ public class CustomerList implements Customer{
 	}
 
 	@Override
-	public CustomerController getCustomerByName(String cusName) {
+	public Customer getCustomerByName(String cusName) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < cusList.size(); i++) {
 			if (cusList.get(i).getCusName().equals(cusName)) {
@@ -53,7 +53,7 @@ public class CustomerList implements Customer{
 	}
 
 	@Override
-	public CustomerController getCustomerById(String cusId) {
+	public Customer getCustomerById(String cusId) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < cusList.size(); i++) {
 			if (cusList.get(i).getCusId().equals(cusId)) {
@@ -64,7 +64,7 @@ public class CustomerList implements Customer{
 	}
 
 	@Override
-	public CustomerController getCustomerByPhoneNo(String cusPhoneNo) {
+	public Customer getCustomerByPhoneNo(String cusPhoneNo) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < cusList.size(); i++) {
 			if (cusList.get(i).getCusPhoneNo().equals(cusPhoneNo)) {
@@ -75,7 +75,7 @@ public class CustomerList implements Customer{
 	}
 
 	@Override
-	public List<CustomerController> getCustomerList() {
+	public List<Customer> getCustomerList() {
 		// TODO Auto-generated method stub
 		return cusList;
 	}

@@ -31,7 +31,7 @@ public class SaleSelectItemActivity extends Activity {
 	private EditText search;
 	private ListView itemInventory;
 	//private ListView itemInInventory;
-	private Inventory inventory;
+	private InventoryController inventory;
 	private String[] inventoryListStringArr;
 	private String[] inventoryString;
 	private Cart cart;
@@ -54,7 +54,7 @@ public class SaleSelectItemActivity extends Activity {
 		// Text view
 		search = (EditText) findViewById(R.id.sale_add_search_edit);
 		
-		inventory = InventoryController.getInstance();  
+		inventory = Inventory.getInstance();  
 		//createItemListStringArr();
 		
 		cancelButton.setOnClickListener(new OnClickListener() {

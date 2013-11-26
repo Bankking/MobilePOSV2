@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 	private TextView totalPriceTextView;
 	private double totalPrice;
 	private Cart cart;
-	private Inventory inventory;
+	private InventoryController inventory;
 	private String[] itemInCartListStringArr;
 	
 	private ImageButton addButton;
@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
 		tabHost.addTab(tabSpec);
 			
 		tabHost.setCurrentTab(1);
-		inventory = InventoryController.getInstance();
+		inventory = Inventory.getInstance();
 		cart = Cart.getCartInstance();
 		
 		createItemSaleListStringArr();
