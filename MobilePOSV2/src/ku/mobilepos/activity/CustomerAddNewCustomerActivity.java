@@ -1,6 +1,6 @@
 package ku.mobilepos.activity;
 
-import ku.mobilepos.controller.CustomerListController;
+import ku.mobilepos.controller.CustomerController;
 import ku.mobilepos.domain.Customer;
 import ku.mobilepos.domain.CustomerList;
 
@@ -15,17 +15,20 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class CustomerAddNewCustomerActivity extends Activity {
-
+	/** name of customer */
 	private EditText cusName;
+	/** customer's phone number */
 	private EditText cusPhoneNo;
+	/** button to confirm for add product */
 	private Button confirmButton;
+	/** button to cancel product */
 	private Button cancelButton;
 
 	/** new customer **/
-	private CustomerListController customerList;
+	private Customer customerList;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
+		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.customer_add_page);
 
@@ -36,7 +39,7 @@ public class CustomerAddNewCustomerActivity extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				Customer newCustomer = new Customer();
+				CustomerController newCustomer = new CustomerController();
 				newCustomer.setCusName(cusName.getText().toString());
 				newCustomer.setCusPhoneNo(cusPhoneNo.getText().toString());
 				newCustomer.setCusId(customerList.getCustomerList().size());

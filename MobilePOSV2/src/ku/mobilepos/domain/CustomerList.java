@@ -3,28 +3,28 @@ package ku.mobilepos.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import ku.mobilepos.controller.CustomerListController;
+import ku.mobilepos.controller.CustomerController;
 
 
-public class CustomerList implements CustomerListController{
+public class CustomerList implements Customer{
 	
-	private static CustomerListController customerList = null;
-	private static List<Customer> cusList = null;
+	private static Customer customerList = null;
+	private static List<CustomerController> cusList = null;
 	
 	private CustomerList(){
 		
 	}
 	
-	public static CustomerListController getInstance(){
+	public static Customer getInstance(){
 		if (customerList == null) {
 			customerList = new CustomerList();
-			cusList = new ArrayList<Customer>();
+			cusList = new ArrayList<CustomerController>();
 		}
 		return customerList;
 	}
 	
 	@Override
-	public void addCustomer(Customer c) {
+	public void addCustomer(CustomerController c) {
 		// TODO Auto-generated method stub
 		cusList.add(c);
 	}
@@ -42,7 +42,7 @@ public class CustomerList implements CustomerListController{
 	}
 
 	@Override
-	public Customer getCustomerByName(String cusName) {
+	public CustomerController getCustomerByName(String cusName) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < cusList.size(); i++) {
 			if (cusList.get(i).getCusName().equals(cusName)) {
@@ -53,7 +53,7 @@ public class CustomerList implements CustomerListController{
 	}
 
 	@Override
-	public Customer getCustomerById(String cusId) {
+	public CustomerController getCustomerById(String cusId) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < cusList.size(); i++) {
 			if (cusList.get(i).getCusId().equals(cusId)) {
@@ -64,7 +64,7 @@ public class CustomerList implements CustomerListController{
 	}
 
 	@Override
-	public Customer getCustomerByPhoneNo(String cusPhoneNo) {
+	public CustomerController getCustomerByPhoneNo(String cusPhoneNo) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < cusList.size(); i++) {
 			if (cusList.get(i).getCusPhoneNo().equals(cusPhoneNo)) {
@@ -75,7 +75,7 @@ public class CustomerList implements CustomerListController{
 	}
 
 	@Override
-	public List<Customer> getCustomerList() {
+	public List<CustomerController> getCustomerList() {
 		// TODO Auto-generated method stub
 		return cusList;
 	}

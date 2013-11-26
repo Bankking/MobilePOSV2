@@ -29,28 +29,36 @@ import android.widget.AdapterView.OnItemClickListener;
 public class MainActivity extends Activity {
 
 	/**sale page*/
-	private ImageButton addToCartButton;
-	private ImageButton clearButton;
-	private Button confirmButton;
-	private ListView itemInCartList;
+	private ImageButton saleAddBt;
+	private ImageButton saleScanBt;
+	private ImageButton saleUndo;
+	private ImageButton saleClearBt;
+	private Button saleConfirmBt;
 	private TextView totalPriceTextView;
 	private double totalPrice;
+	
 	private Cart cart;
-	private InventoryController inventory;
+	private ListView itemInCartList;
 	private String[] itemInCartListStringArr;
-	private Button scanBtn;
+	
+	private int itemPosition;
 	
 	/**inventory page*/
-	private ImageButton addButton;
+	private ImageButton invAddBt;
+	private ImageButton invEditBt;
+	private ImageButton invSearchBt;
+	private ImageButton invDeleteBt;
+	
+	private InventoryController inventory;
 	
 	/** list of product */
 	private ListView allItemList;
 	private String[] inventoryString;
 	private String[] inventoryListStringArr;
 	
-  	private TextView formatTxt, contentTxt;
-  	private int itemPosition;
+  	/**customer page*/
   	
+	
 	
 	@Override
 	public void onCreate(Bundle saveInstanceState){
@@ -58,13 +66,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
 		TabHost tabHost = (TabHost)findViewById(R.id.tabhost);
 		
-		addToCartButton = (ImageButton) findViewById(R.id.sale_add);
-		clearButton = (ImageButton) findViewById(R.id.sale_clear);
-		confirmButton = (Button) findViewById(R.id.sale_confirm);
+		saleAddBt = (ImageButton) findViewById(R.id.sale_add);
+		saleClearBt = (ImageButton) findViewById(R.id.sale_clear);
+		saleConfirmBt = (Button) findViewById(R.id.sale_confirm);
 		totalPriceTextView = (TextView) findViewById(R.id.sale_tatalprice);
 		itemInCartList = (ListView) findViewById(R.id.sale_itemlist);
 		
-		addButton = (ImageButton)findViewById(R.id.inventory_add);
+		invAddBt = (ImageButton)findViewById(R.id.inventory_add);
 	
 		tabHost.setup();
 		
@@ -95,7 +103,7 @@ public class MainActivity extends Activity {
 		createItemSaleListStringArr();
 		totalPriceTextView.setText(cart.getTotalSale()+" .-");
 		
-		addToCartButton.setOnClickListener(new OnClickListener() {
+		saleAddBt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
@@ -114,7 +122,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		clearButton.setOnClickListener(new OnClickListener() {
+		saleClearBt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				/*// TODO Auto-generated method stub
@@ -134,7 +142,7 @@ public class MainActivity extends Activity {
 		//inventory = InventoryController.getInstance();
         createItemListStringArr();
         
-        addButton.setOnClickListener(new OnClickListener() {
+        invAddBt.setOnClickListener(new OnClickListener() {
         	@Override
         	public void onClick(View v) {
         		
@@ -210,7 +218,7 @@ public class MainActivity extends Activity {
         }
     }
 	
-	public void showSaleAddDialog()
+/*	public void showSaleAddDialog()
 	{
         final AlertDialog.Builder saleAddDialog = new AlertDialog.Builder(this);
         final EditText saleId = new EditText(this);
@@ -237,7 +245,7 @@ public class MainActivity extends Activity {
     	
         saleAddDialog.show();
     	
-	}
+	}*/
 	
 	//Menu Activity
 	@Override
