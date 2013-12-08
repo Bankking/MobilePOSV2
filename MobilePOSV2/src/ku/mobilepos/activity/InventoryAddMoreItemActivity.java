@@ -4,6 +4,7 @@ import java.util.List;
 
 import ku.mobilepos.controller.CartController;
 import ku.mobilepos.controller.InventoryController;
+import ku.mobilepos.dao.jpa.JpaInventoryDao;
 import ku.mobilepos.domain.Inventory;
 
 
@@ -13,6 +14,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -28,6 +30,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class InventoryAddMoreItemActivity extends Activity {
+	
+	SQLiteDatabase db;
 	
 	private EditText itemName;
 	private EditText itemQntyType;
@@ -59,6 +63,10 @@ public class InventoryAddMoreItemActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.inventory_add_page);
+		
+		final JpaInventoryDao myDb = new JpaInventoryDao(this);
+		myDb.getWritableDatabase(); // First method
+		
 		inventory = Inventory.getInstance();
 		//itemList = inventory.getItemList();
 		newItem = new CartController();
@@ -142,6 +150,32 @@ public class InventoryAddMoreItemActivity extends Activity {
 					newItem.setItemBuyPriceBahtPerBox(itemBuyPricePerBox.getText().toString());
 					inventory.addItem(newItem);		
 					
+					
+					
+					long flg1 = myDb.InsertData(itemProductId.getText().toString(),
+							itemName.getText().toString(),
+							itemBrand.getText().toString(),
+							itemQntyType.getText().toString(),
+							itemPrice.getText().toString());
+					if(flg1 > 0)
+
+						{
+		
+						Toast.makeText(InventoryAddMoreItemActivity.this,"Insert NEW PRODUCT Successfully",
+					
+						Toast.LENGTH_LONG).show();
+						
+						}
+						
+						else
+						
+						{
+						
+						Toast.makeText(InventoryAddMoreItemActivity.this,"Insert(1) Data Failed.",
+						
+						Toast.LENGTH_LONG).show();
+						
+						}
 					Intent goInventory = new Intent(getApplicationContext(),MainActivity.class);
 					startActivity(goInventory);
 				}

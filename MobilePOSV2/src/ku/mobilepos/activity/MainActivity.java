@@ -1,6 +1,7 @@
 package ku.mobilepos.activity;
 
 import ku.mobilepos.controller.InventoryController;
+import ku.mobilepos.dao.jpa.JpaInventoryDao;
 import ku.mobilepos.domain.Cart;
 import ku.mobilepos.domain.Customer;
 import ku.mobilepos.domain.CustomerList;
@@ -13,6 +14,7 @@ import android.app.AlertDialog;
 import android.content.ClipData.Item;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -29,6 +31,8 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends Activity {
+	
+	SQLiteDatabase db;
 
 	/**sale page*/
 	private ImageButton saleAddBt;
@@ -73,6 +77,11 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle saveInstanceState){
 		super.onCreate(saveInstanceState);
+		
+		JpaInventoryDao myDb = new JpaInventoryDao(this);
+		myDb.getWritableDatabase(); // First method
+		
+		
 		setContentView(R.layout.main);
 		TabHost tabHost = (TabHost)findViewById(R.id.tabhost);
 		
@@ -141,6 +150,7 @@ public class MainActivity extends Activity {
     			startActivity(refreshCart);
 				*/
 				cart.resetCart();
+				createItemSaleListStringArr();
 				itemInCartList.refreshDrawableState();
 				Toast.makeText(
 						getApplicationContext(),
@@ -202,6 +212,7 @@ public class MainActivity extends Activity {
     }
 	
 	public void createItemSaleListStringArr() {
+		if (cart!=null){
 		if (cart.getItemListInCart().size() != 0) {
 			itemInCartListStringArr = new String[cart.getItemListInCart()
 				.size()];
@@ -233,6 +244,15 @@ public class MainActivity extends Activity {
 							Toast.LENGTH_LONG).show();
 				}
 			});
+		}
+		}
+		else {
+			itemInCartListStringArr = new String[0];
+			itemInCartList = (ListView)findViewById(R.id.sale_itemlist);
+			ArrayAdapter<String> itemListAdapter = new ArrayAdapter<String>(
+					this, android.R.layout.simple_list_item_1,
+					android.R.id.text1, itemInCartListStringArr);
+			itemInCartList.setAdapter(itemListAdapter);
 		}
 	}
 	

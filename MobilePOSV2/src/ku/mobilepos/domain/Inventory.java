@@ -3,11 +3,15 @@ package ku.mobilepos.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.database.sqlite.SQLiteDatabase;
+
 import ku.mobilepos.controller.CartController;
 import ku.mobilepos.controller.InventoryController;
+import ku.mobilepos.dao.jpa.JpaInventoryDao;
 
 
 public class Inventory implements InventoryController {
+
 	private List<CartController> itemList = null;
 	private static InventoryController inventory = null;
 	
@@ -29,6 +33,8 @@ public class Inventory implements InventoryController {
 	@Override
 	public void addItem(CartController i) {
 		// TODO Auto-generated method stub
+		
+		
 		itemList.add(i);
 	}
 
