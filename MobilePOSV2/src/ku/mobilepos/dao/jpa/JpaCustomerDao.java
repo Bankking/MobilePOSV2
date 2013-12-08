@@ -23,8 +23,8 @@ public class JpaCustomerDao  extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-		db.execSQL("CREATE TABLE customer " + 
-		          "(CustomerID INTEGER PRIMARY KEY," +
+		db.execSQL("CREATE TABLE customer" + 
+		          "(CustomerID INTEGER PRIMARY KEY AUTOINCREMENT," +
 		          " Cus_Name TEXT(100)," +
 		          " Cus_Phone TEXT(100));");
 		Log.d("CREATE TABLE","Create Table Customer Successfully.");

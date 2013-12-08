@@ -25,7 +25,7 @@ public class JpaInventoryDao extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 
-		db.execSQL("CREATE TABLE product " +
+		db.execSQL("CREATE TABLE product" +
 
 		"(ProductID INTEGER PRIMARY KEY," +
 
