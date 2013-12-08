@@ -144,17 +144,13 @@ public class MainActivity extends Activity {
 		saleClearBt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				/*// TODO Auto-generated method stub
 				cart.resetCart();
 				Intent refreshCart = new Intent(getApplicationContext(),MainActivity.class);
     			startActivity(refreshCart);
-				*/
-				cart.resetCart();
-				createItemSaleListStringArr();
 				itemInCartList.refreshDrawableState();
 				Toast.makeText(
 						getApplicationContext(),
-						"Sale List is reset.",
+						"Sale cleared.",
 						Toast.LENGTH_SHORT).show();
 			}
 		});
