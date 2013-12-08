@@ -1,24 +1,22 @@
 package ku.mobilepos.dao.jpa;
 
-import ku.mobilepos.dao.InventoryDao;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class JpaInventoryDao extends SQLiteOpenHelper implements InventoryDao {
-
+public class JpaInventoryDao extends SQLiteOpenHelper {
 	// Database Version
-
 	private static final int DATABASE_VERSION = 1;
 	// Database Name
 	private static final String DATABASE_NAME = "mobilepos";
+	
 	// Table Name
 	private static final String TABLE_PRODUCT = "product";
 
 	public JpaInventoryDao(Context context) {
+		
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		// TODO Auto-generated constructor stub
 	}
