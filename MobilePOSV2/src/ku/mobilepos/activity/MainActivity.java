@@ -90,7 +90,6 @@ public class MainActivity extends Activity {
 		saleConfirmBt = (Button) findViewById(R.id.sale_confirm);
 		totalPriceTextView = (TextView) findViewById(R.id.sale_tatalprice);
 		itemInCartList = (ListView) findViewById(R.id.sale_itemlist);
-		
 		invAddBt = (ImageButton)findViewById(R.id.inventory_add);
 	
 		tabHost.setup();
@@ -121,6 +120,20 @@ public class MainActivity extends Activity {
 		
 		createItemSaleListStringArr();
 		totalPriceTextView.setText(cart.getTotalSale()+" .-");
+		
+		
+		saleConfirmBt.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				ShowDialog();
+				// TODO go to history page
+				
+				cart.resetCart();
+				Intent refreshCart = new Intent(getApplicationContext(),MainActivity.class);
+    			startActivity(refreshCart);
+				itemInCartList.refreshDrawableState();
+			}
+		});
 		
 		saleAddBt.setOnClickListener(new OnClickListener() {
 			@Override
@@ -206,6 +219,37 @@ public class MainActivity extends Activity {
     		});
         }
     }
+	
+	public void ShowDialog()
+	{
+        final AlertDialog.Builder dDialog = new AlertDialog.Builder(this);
+        final EditText input = new EditText(this);
+
+    	dDialog.setTitle("Phone number ");
+    	dDialog.setMessage("Please input your phone number :");
+    	dDialog.setIcon(android.R.drawable.stat_sys_upload_done); 
+    	dDialog.setView(input);
+    	
+    	// Ok
+    	dDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+    		public void onClick(DialogInterface dialog, int whichButton) {
+    			String phoneNo = input.getText().toString();
+    			Intent goInventory = new Intent(getApplicationContext(),
+						MainActivity.class);	
+    			startActivity(goInventory);
+    		  }
+    		});
+    	
+    	// Cancel
+    	dDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+    		  public void onClick(DialogInterface dialog, int whichButton) {
+    			  String phoneNo = input.getText().toString();
+    		  }
+    		});
+    	
+    	dDialog.show();
+    	
+	}
 	
 	public void createItemSaleListStringArr() {
 		if (cart!=null){
