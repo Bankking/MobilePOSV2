@@ -344,22 +344,6 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="70dp" />
 
-                        <EditText
-                            android:id="@+id/customer_search_edit"
-                            android:layout_width="160dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="search product id"
-                            android:textSize="12sp" >
-
-                            <requestFocus />
-                        </EditText>
-
-                        <ImageButton
-                            android:id="@+id/customer_search"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@android:drawable/ic_menu_search" />
                     </LinearLayout>
 
                     <LinearLayout

@@ -25,17 +25,15 @@ public final class R {
         public static final int untitled=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08003a;
+        public static final int action_settings=0x7f080038;
         public static final int customer_add=0x7f080030;
         public static final int customer_add_cancel=0x7f080009;
         public static final int customer_add_confirm=0x7f080007;
         public static final int customer_add_name=0x7f080003;
         public static final int customer_add_phone=0x7f080006;
-        public static final int customer_delete=0x7f080035;
+        public static final int customer_delete=0x7f080033;
         public static final int customer_edit=0x7f080031;
-        public static final int customer_itemlist=0x7f080034;
-        public static final int customer_search=0x7f080033;
-        public static final int customer_search_edit=0x7f080032;
+        public static final int customer_itemlist=0x7f080032;
         public static final int inventory_add=0x7f080028;
         public static final int inventory_add_cancel=0x7f08001c;
         public static final int inventory_add_confirm=0x7f08001b;
@@ -53,10 +51,10 @@ public final class R {
         public static final int inventory_search_edit=0x7f08002a;
         public static final int linearLayout1=0x7f08001e;
         public static final int sale_add=0x7f080020;
-        public static final int sale_add_cancel=0x7f080039;
-        public static final int sale_add_itemlist=0x7f080038;
-        public static final int sale_add_search=0x7f080037;
-        public static final int sale_add_search_edit=0x7f080036;
+        public static final int sale_add_cancel=0x7f080037;
+        public static final int sale_add_itemlist=0x7f080036;
+        public static final int sale_add_search=0x7f080035;
+        public static final int sale_add_search_edit=0x7f080034;
         public static final int sale_clear=0x7f080023;
         public static final int sale_confirm=0x7f080025;
         public static final int sale_itemlist=0x7f080024;
