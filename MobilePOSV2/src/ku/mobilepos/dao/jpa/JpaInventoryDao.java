@@ -1,4 +1,4 @@
-package ku.mpbilepos.dao.jpa;
+package ku.mobilepos.dao.jpa;
 
 import ku.mobilepos.dao.InventoryDao;
 import android.content.Context;
