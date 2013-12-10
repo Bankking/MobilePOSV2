@@ -296,6 +296,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+                    
+                    <ListView
+                        android:id="@+id/history_itemlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="124dp"
+                        android:layout_weight="0.47"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp" >
+                    </ListView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="310dp" />
+
+                        <ImageButton
+                            android:id="@+id/history_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:drawable/ic_menu_delete" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
                 </LinearLayout>
                 
 ////////////////////////////////////////////////////////////////////////
