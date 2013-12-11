@@ -47,7 +47,8 @@ public class JpaCustomerDao  extends SQLiteOpenHelper{
 	    
 			
 	    	   ContentValues Val = new ContentValues();
-	    	
+	    	   String id = null;
+	    	   Val.put("CustomerID", id);
 	    	   Val.put("Cus_Name", strName);
 	    	   Val.put("Cus_Phone", strTel);
 	   
