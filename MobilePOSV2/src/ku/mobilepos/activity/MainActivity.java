@@ -134,9 +134,9 @@ public class MainActivity extends Activity {
 				ShowDialog();
 				// TODO go to history page
 				
-				cart.resetCart();
-				Intent refreshCart = new Intent(getApplicationContext(),MainActivity.class);
-    			startActivity(refreshCart);
+				//cart.resetCart();
+				//Intent refreshCart = new Intent(getApplicationContext(),MainActivity.class);
+    			//startActivity(refreshCart);
 				itemInCartList.refreshDrawableState();
 			}
 		});
@@ -189,7 +189,7 @@ public class MainActivity extends Activity {
         
         hisList = SaleHistory.getHisInstance();
         allHisList = (ListView)findViewById(R.id.history_itemlist);
-        
+        createItemHisListStringArr();
         
         
         customerList = CustomerList.getInstance();
