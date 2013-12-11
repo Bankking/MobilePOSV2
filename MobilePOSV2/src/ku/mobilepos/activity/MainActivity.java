@@ -6,6 +6,7 @@ import ku.mobilepos.domain.Cart;
 import ku.mobilepos.domain.Customer;
 import ku.mobilepos.domain.CustomerList;
 import ku.mobilepos.domain.Inventory;
+import ku.mobilepos.domain.SaleHistory;
 
 import com.example.mobileposv2.R;
 
@@ -72,6 +73,11 @@ public class MainActivity extends Activity {
 	private ListView allCustomerList;
 	private Customer customerList;
 	private String[] customerListStringArr;
+	
+	/** list of SaleHistory **/
+	private ListView allHisList;
+	private SaleHistory hisList;
+	private String[] hisListStringArr;
 	
 	
 	@Override
@@ -181,6 +187,11 @@ public class MainActivity extends Activity {
         	}
         });
         
+        hisList = SaleHistory.getHisInstance();
+        allHisList = (ListView)findViewById(R.id.history_itemlist);
+        
+        
+        
         customerList = CustomerList.getInstance();
         createItemCusListStringArr();
         cusAddBt = (ImageButton)findViewById(R.id.customer_add);
@@ -194,6 +205,31 @@ public class MainActivity extends Activity {
         });
 		
 	}
+	
+	public void createItemHisListStringArr(){
+    	if (hisList.getItemBoughtList().size()!=0){
+        	hisListStringArr = new String[hisList.getItemBoughtList().size()];
+        	for (int i = 0; i < hisListStringArr.length; i++) {
+    			hisListStringArr[i] =  "\nCusPhone: "+hisList.getCusPhone().get(i) +"\nBought: "
+    										+hisList.getAllBought(i);
+    		}
+        	
+        	allHisList = (ListView)findViewById(R.id.history_itemlist);
+        	ArrayAdapter<String> itemListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, customerListStringArr);
+    		allHisList.setAdapter(itemListAdapter); 
+    		allHisList.setOnItemClickListener(new OnItemClickListener() {
+
+    		@Override
+    		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    						           
+    		        // Show Alert 
+    		        Toast.makeText(getApplicationContext(),
+    		        "Click" , Toast.LENGTH_LONG)
+    		        .show();
+    			}
+    		});
+        }
+    }
 	
 	public void createItemCusListStringArr(){
     	if (customerList.getCustomerList().size()!=0){
@@ -234,6 +270,10 @@ public class MainActivity extends Activity {
     	dDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
     		public void onClick(DialogInterface dialog, int whichButton) {
     			String phoneNo = input.getText().toString();
+    			HistorySellList historyselllist = new HistorySellList();
+    			
+    		//	historyselllist.AddItemHistory(phoneNo);
+    			hisList.setItemBoughtList(cart.getItemListInCart(), phoneNo);
     			Intent goInventory = new Intent(getApplicationContext(),
 						MainActivity.class);	
     			startActivity(goInventory);
