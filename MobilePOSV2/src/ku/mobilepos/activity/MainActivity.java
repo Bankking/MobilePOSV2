@@ -270,7 +270,7 @@ public class MainActivity extends Activity {
     	dDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
     		public void onClick(DialogInterface dialog, int whichButton) {
     			String phoneNo = input.getText().toString();
-    			HistorySaleList historyselllist = new HistorySaleList();
+    			HistorySaleListActivity historyselllist = new HistorySaleListActivity();
     			
     		//	historyselllist.AddItemHistory(phoneNo);
     			hisList.setItemBoughtList(cart.getItemListInCart(), phoneNo);

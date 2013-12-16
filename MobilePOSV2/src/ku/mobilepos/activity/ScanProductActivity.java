@@ -1,3 +1,4 @@
+package ku.mobilepos.activity;
 /*package ku.mobilepos.activity;
 
 import ku.mobilepos.android.IntentIntegrator;
