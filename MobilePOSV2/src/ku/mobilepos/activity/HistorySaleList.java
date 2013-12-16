@@ -26,7 +26,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 
-public class HistorySellList extends Activity {
+public class HistorySaleList extends Activity {
 	private MainActivity mainactivity;
 	private ListView history;
 	private List phoneNO;
